@@ -18,6 +18,7 @@ services:
     depends_on:
       - mqtt-broker-container
       - mongodb-container
+      - redis-container
       
   mongodb-container:
     image: mongo:latest
