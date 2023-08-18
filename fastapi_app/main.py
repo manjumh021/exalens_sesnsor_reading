@@ -2,6 +2,7 @@ from fastapi import FastAPI, HTTPException
 import pymongo
 import redis
 import json
+from datetime import datetime
 
 app = FastAPI()
 
@@ -30,5 +31,7 @@ def get_last_ten_readings(sensor_id: str):
     return [json.loads(reading) for reading in readings]
 
 def parse_datetime(datetime_str):
-    # Implement datetime parsing logic here
-    pass
+    try:
+        return datetime.strptime(datetime_str, "%Y-%m-%dT%H:%M:%SZ")
+    except ValueError:
+        raise ValueError("Invalid datetime format. Expected ISO8601 format: 'YYYY-MM-DDTHH:MM:SSZ'")
