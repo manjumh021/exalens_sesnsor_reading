@@ -1,0 +1,40 @@
+version: "3"
+services:
+  mqtt-broker-container:
+    build:
+      context: ./mqtt_broker
+    ports:
+      - "1883:1883"
+      
+  mqtt-publisher-container:
+    build:
+      context: ./mqtt_publisher
+    depends_on:
+      - mqtt-broker-container
+      
+  mqtt-subscriber-container:
+    build:
+      context: ./mqtt_subscriber
+    depends_on:
+      - mqtt-broker-container
+      - mongodb-container
+      
+  mongodb-container:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+      
+  redis-container:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+      
+  fastapi-container:
+    build:
+      context: ./fastapi_app
+    depends_on:
+      - mqtt-subscriber-container
+      - mongodb-container
+      - redis-container
+    ports:
+      - "8000:8000"
