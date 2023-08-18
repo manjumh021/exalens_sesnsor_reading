@@ -8,12 +8,31 @@ client.connect("mqtt-broker-container", 1883, 60)  # Use the container name of t
 
 while True:
     sensor_id = "unique_sensor_id"
-    value = random.uniform(0, 100)
+    
+    # Simulate temperature and humidity values
+    temperature_value = random.uniform(0, 100)
+    humidity_value = random.uniform(0, 100)
+    
     timestamp = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
-    payload = {
+    
+    # Payload for temperature
+    temperature_payload = {
         "sensor_id": sensor_id,
-        "value": value,
+        "value": temperature_value,
         "timestamp": timestamp
     }
-    client.publish("sensors/temperature", json.dumps(payload))
+    
+    # Payload for humidity
+    humidity_payload = {
+        "sensor_id": sensor_id,
+        "value": humidity_value,
+        "timestamp": timestamp
+    }
+    
+    # Publish to temperature topic
+    client.publish("sensors/temperature", json.dumps(temperature_payload))
+    
+    # Publish to humidity topic
+    client.publish("sensors/humidity", json.dumps(humidity_payload))
+    
     time.sleep(5)
