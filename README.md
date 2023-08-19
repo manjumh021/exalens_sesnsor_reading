@@ -18,7 +18,7 @@ This project simulates the behavior of sensors, monitors their readings, and pro
 - Sensor Readings API: [http://localhost:8000/sensor_readings](http://localhost:8000/sensor_readings)
 - Last Ten Readings API: [http://localhost:8000/last_ten_readings](http://localhost:8000/last_ten_readings)
 
-%. Stop the system:
+5. Stop the system:
     ```bash
     docker-compose down
     ```
