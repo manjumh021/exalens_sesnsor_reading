@@ -10,6 +10,7 @@ while True:
     sensor_id = "12345" #unique sensor id
     
     # Simulate temperature and humidity values. here I have assumed some random values between 0 to 100
+    # we can fetch realtime data from IoT or sesnsors and assign them based on topic
     temperature_value = random.uniform(0, 100)
     humidity_value = random.uniform(0, 100)
     
