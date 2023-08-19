@@ -15,8 +15,10 @@ This project simulates the behavior of sensors, monitors their readings, and pro
     docker-compose up
     ```
 4. Access the FastAPI endpoints:
--> Sensor Readings API: http://localhost:8000/sensor_readings
--> Last Ten Readings API: http://localhost:8000/last_ten_readings
+# API Endpoints
+- Sensor Readings API: [http://localhost:8000/sensor_readings](http://localhost:8000/sensor_readings)
+- Last Ten Readings API: [http://localhost:8000/last_ten_readings](http://localhost:8000/last_ten_readings)
+
 Stop the system:
     ```bash
     docker-compose down
