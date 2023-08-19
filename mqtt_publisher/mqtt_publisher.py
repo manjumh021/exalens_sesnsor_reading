@@ -7,9 +7,9 @@ client = mqtt.Client()
 client.connect("mqtt-broker-container", 1883, 60)  # Use the container name of the MQTT broker
 
 while True:
-    sensor_id = "unique_sensor_id"
+    sensor_id = "12345" #unique sensor id
     
-    # Simulate temperature and humidity values
+    # Simulate temperature and humidity values. here I have assumed some random values between 0 to 100
     temperature_value = random.uniform(0, 100)
     humidity_value = random.uniform(0, 100)
     
