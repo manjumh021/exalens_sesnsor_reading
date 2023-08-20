@@ -1,2 +1,4 @@
 paho-mqtt==1.5.1
 redis==3.5.3
+pymongo==4.0.1
+
