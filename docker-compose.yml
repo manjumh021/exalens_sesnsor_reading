@@ -1,36 +1,52 @@
 version: "3"
 services:
   mqtt-broker-container:
+    container_name: mqtt-broker-container
     build:
       context: ./mqtt_broker
     ports:
       - "1883:1883"
+    networks:
+      - sensor_reading
       
   mqtt-publisher-container:
+    container_name: mqtt-publisher-container
     build:
       context: ./mqtt_publisher
     depends_on:
       - mqtt-broker-container
+    networks:
+      - sensor_reading
       
   mqtt-subscriber-container:
+    container_name: mqtt-subscriber-container
     build:
       context: ./mqtt_subscriber
     depends_on:
       - mqtt-broker-container
       - mongodb-container
       - redis-container
+    networks:
+      - sensor_reading
       
   mongodb-container:
+    container_name: mongodb-container
     image: mongo:latest
     ports:
       - "27017:27017"
+    networks:
+      - sensor_reading
       
   redis-container:
+    container_name: redis-container
     image: redis:latest
     ports:
       - "6379:6379"
+    networks:
+      - sensor_reading
       
   fastapi-container:
+    container_name: fastapi-container
     build:
       context: ./fastapi_app
     depends_on:
@@ -39,3 +55,8 @@ services:
       - redis-container
     ports:
       - "8000:8000"
+    networks:
+      - sensor_reading
+
+networks:
+  sensor_reading:
