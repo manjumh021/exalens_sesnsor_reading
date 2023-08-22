@@ -8,7 +8,7 @@ app = FastAPI()
 
 @app.get("/sensor_readings")
 def get_sensor_readings(start: str, end: str):
-    client = pymongo.MongoClient("mongodb://mongo-container:27017/")  # Use the container name of MongoDB
+    client = pymongo.MongoClient("mongodb://mongodb-container:27017/")  # Use the container name of MongoDB
     db = client["sensor_db"]
     collection = db["sensor_readings"]
     

@@ -15,7 +15,7 @@ def update_redis(payload):
     redis_client.ltrim(sensor_id, 0, 9)
 
 def store_in_mongodb(payload):
-    client = pymongo.MongoClient("mongodb://mongo-container:27017/")  # Use the container name of MongoDB
+    client = pymongo.MongoClient("mongodb://mongodb-container:27017/")  # Use the container name of MongoDB
     db = client["sensor_db"]
     collection = db["sensor_readings"]
     collection.insert_one(payload)
