@@ -6,7 +6,7 @@ This project simulates the behavior of sensors, monitors their readings, and pro
 
 1. Clone this repository:
     ```bash
-    git clone manjumh021/sensor_reading
+    git clone https://github.com/manjumh021/sensor_reading.git
     cd sensor_reading
     ```
 2. Install Docker and Docker Compose if not already installed.
