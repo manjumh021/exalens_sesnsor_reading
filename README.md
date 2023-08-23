@@ -15,9 +15,11 @@ This project simulates the behavior of sensors, monitors their readings, and pro
     docker-compose up
     ```
 4. Access the FastAPI endpoints:
-- Sensor Readings API: [http://localhost:8000/sensor_readings](http://localhost:8000/sensor_readings)
-- Last Ten Readings API: [http://localhost:8000/last_ten_readings](http://localhost:8000/last_ten_readings)
-
+- Sensor Readings API: [http://localhost:8000/sensor_readings?topic=<topic_name>&start=<start_time>&end=<end_time>]([http://localhost:8000/sensor_readings](http://localhost:8000/sensor_readings?topic=sensors_temperature&start=<start_time>&end=<end_time>))
+--> example: http://localhost:8000/sensor_readings?topic=sensors_temperature&start=2022-08-23&end=2024-08-23T04:20:10Z
+- Last Ten Readings API: [http://localhost:8000/last_ten_readings?topic=<topic_name>&sensor_id=<sensor_id>](http://localhost:8000/last_ten_readings?topic=<topic_name>&sensor_id=<sensor_id>)
+--> example: http://localhost:8000/last_ten_readings?topic=sensors_humidity&sensor_id=12345
+- topics are <b>sensors_humidity</b> and <b>sensors_temperature</b>.
 5. Stop the system:
     ```bash
     docker-compose down
