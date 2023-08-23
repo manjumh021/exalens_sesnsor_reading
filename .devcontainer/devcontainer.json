@@ -1,12 +1,12 @@
 {
-  "name": "Sensor Reading Project",
+  "name": "fastapi-container",
   "dockerComposeFile": ["../docker-compose.yml"],
-  "extensions": ["ms-python.python"],
+  "service": "fastapi-container",
+  "workspaceFolder": "/sensor_reading",
+  "forwardPorts": [8000],
   "settings": {
     "terminal.integrated.shell.linux": "/bin/bash"
   },
-  "postCreateCommand": "docker-compose up -d",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
   "remoteUser": "vscode"
 }
-
