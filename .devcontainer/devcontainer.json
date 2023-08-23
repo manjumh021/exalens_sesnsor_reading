@@ -1,7 +1,7 @@
 {
     "name": "sensor_reading",
     "dockerComposeFile": ["../docker-compose.yml"],
-    "service": "sensor_reading_app",
+    "service": "sensor_reading",
     "workspaceFolder": "/app",
     "forwardPorts": [8000]
   }
