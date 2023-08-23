@@ -2,7 +2,7 @@
   "name": "fastapi-container",
   "dockerComposeFile": ["../docker-compose.yml"],
   "service": "fastapi-container",
-  "workspaceFolder": "/sensor_reading",
+  "workspaceFolder": "/workspaces/sensor_reading",
   "forwardPorts": [8000],
   "settings": {
     "terminal.integrated.shell.linux": "/bin/bash"
