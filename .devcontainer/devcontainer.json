@@ -1,6 +1,6 @@
 {
   "name": "Sensor Reading Project",
-  "dockerComposeFile": ["docker-compose.yml"],
+  "dockerComposeFile": ["../docker-compose.yml"],
   "extensions": ["ms-python.python"],
   "settings": {
     "terminal.integrated.shell.linux": "/bin/bash"
