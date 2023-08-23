@@ -6,8 +6,8 @@ This project simulates the behavior of sensors, monitors their readings, and pro
 
 1. Clone this repository:
     ```bash
-    git clone https://github.com/manjumh021/exalens_sesnsor_reading.git
-    cd exalens_sesnsor_reading
+    git clone manjumh021/sensor_reading
+    cd sensor_reading
     ```
 2. Install Docker and Docker Compose if not already installed.
 3. Run the system using Docker Compose:
