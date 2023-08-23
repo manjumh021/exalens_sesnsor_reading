@@ -6,6 +6,7 @@ services:
       context: ./mqtt_broker
     ports:
       - "1883:1883"
+    restart: unless-stopped
     networks:
       - sensor_reading
       
