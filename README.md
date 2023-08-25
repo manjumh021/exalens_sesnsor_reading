@@ -19,6 +19,7 @@ This project simulates the behavior of sensors, monitors their readings, and pro
     ```bash
     docker-compose down
     ```
+Note: The code repository can also be hosted on GitHub Codespaces for easy development and collaboration.
 
 ## Accessing FastAPI Endpoints:
 
