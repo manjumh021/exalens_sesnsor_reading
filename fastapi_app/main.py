@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 app = FastAPI()
 
 @app.get("/sensor_readings")
-def get_sensor_readings(topic: str, start: str, end: str):
+def get_sensor_readings(sensor_id: str, topic: str, start: str, end: str):
     if topic == "sensors_temperature" or topic == "sensors_humidity":
         client = pymongo.MongoClient("mongodb://mongodb-container:27017/")
         db = client["sensor_db"]
@@ -17,6 +17,7 @@ def get_sensor_readings(topic: str, start: str, end: str):
         end_time = convert_to_custom_format(end)
         
         readings = collection.find({
+            "sensor_id": sensor_id,
             "timestamp": {
                 "$gte": start_time,
                 "$lte": end_time
